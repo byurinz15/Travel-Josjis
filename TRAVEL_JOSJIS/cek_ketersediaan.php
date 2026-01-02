@@ -16,10 +16,8 @@ $query = "SELECT schedule_id FROM schedules
 $result = mysqli_query($conn, $query);
 
 if(mysqli_num_rows($result) > 0) {
-    // JIKA ADA: Redirect ke halaman jadwal dengan membawa parameter
     header("Location: jadwal.php?asal=$asal&tujuan=$tujuan");
 } else {
-    // JIKA TIDAK ADA: TAMPILKAN HALAMAN UI MODERN (Bukan Alert)
     include 'header.php';
     ?>
     <div class="min-h-screen bg-gray-50 flex items-center justify-center p-4">
@@ -60,4 +58,5 @@ if(mysqli_num_rows($result) > 0) {
     <?php
     include 'footer.php';
 }
+
 ?>
